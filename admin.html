@@ -3,10 +3,11 @@
 <body class="admin-body"><header class="site-header"><a class="wordmark" href="/"><span>PAZ</span>ZLE</a><nav><a href="/">Public site</a><button id="admin-logout">Log out</button></nav></header>
 <main class="admin-main"><div class="section-kicker">Restricted</div><h1>Control room</h1><p id="admin-status">Checking admin access…</p>
   <section id="admin-panel" class="hidden">
-    <div class="admin-tabs"><button data-panel="overview" class="active">Overview</button><button data-panel="puzzles">Puzzles</button><button data-panel="teams">Teams</button><button data-panel="settings">Introduction</button></div>
+    <div class="admin-tabs"><button data-panel="overview" class="active">Overview</button><button data-panel="puzzles">Puzzles</button><button data-panel="teams">Teams</button><button data-panel="activity">Team activity</button><button data-panel="settings">Introduction</button></div>
     <div id="overview-panel" class="admin-panel"><div id="admin-stats" class="stat-grid"></div></div>
     <div id="puzzles-panel" class="admin-panel hidden"><div class="panel-heading"><h2>Puzzles and solutions</h2><button id="add-puzzle" class="primary">Add puzzle</button></div><div id="admin-puzzles"></div></div>
     <div id="teams-panel" class="admin-panel hidden"><h2>Teams and members</h2><div class="table-wrap"><table><thead><tr><th>Team</th><th>Code</th><th>Members</th><th>Level</th><th>Solved</th><th>Leaderboard</th><th>Actions</th></tr></thead><tbody id="admin-teams"></tbody></table></div></div>
+    <div id="activity-panel" class="admin-panel hidden"><div class="panel-heading"><div><h2>Team activity</h2><p>Review guesses, solves, and hint use for one team.</p></div><label>Team<select id="activity-team"></select></label></div><div id="activity-summary" class="stat-grid"></div><div class="table-wrap"><table><thead><tr><th>Time</th><th>Type</th><th>Puzzle</th><th>Details</th><th>Result</th></tr></thead><tbody id="activity-log"></tbody></table></div></div>
     <div id="settings-panel" class="admin-panel hidden"><h2>Homepage introduction</h2><form id="intro-form" class="stack"><label>Introduction<textarea name="intro" rows="7"></textarea></label><button class="primary">Save introduction</button></form></div>
   </section>
 </main><script src="control-room.js" defer></script></body></html>

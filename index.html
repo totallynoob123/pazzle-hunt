@@ -6,6 +6,7 @@
   <title>Pazzle Hunt</title>
   <meta name="description" content="A six-level Lakeside puzzle hunt.">
   <link rel="stylesheet" href="pazzle.css">
+  <link rel="stylesheet" href="pdf-viewer.css">
 </head>
 <body>
   <header class="site-header">
@@ -78,6 +79,7 @@
     <button class="dialog-close" aria-label="Close">×</button>
     <div class="section-kicker" id="dialog-level"></div><h2 id="dialog-title"></h2>
     <div id="dialog-body" class="puzzle-body"></div>
+    <section id="pdf-panel" class="pdf-panel hidden"><div class="pdf-actions"><a id="pdf-open" class="outline" target="_blank" rel="noopener">Open PDF</a><a id="pdf-download" class="primary" download>Download PDF</a></div><iframe id="pdf-viewer" title="Puzzle PDF"></iframe></section>
     <div id="hint-list" class="hint-list"></div>
     <p id="guess-counter" class="guess-counter"></p>
     <form id="answer-form" class="answer-row"><input name="answer" placeholder="Enter answer" required><button class="primary">Submit</button></form>

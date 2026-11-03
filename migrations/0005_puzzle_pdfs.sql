@@ -1,0 +1,1 @@
+ALTER TABLE puzzles ADD COLUMN pdf_url TEXT NOT NULL DEFAULT '';
