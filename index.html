@@ -33,9 +33,9 @@
     <section id="auth-view" class="view narrow">
       <div class="section-kicker">Team access</div>
       <h2>Enter the hunt</h2>
-      <div class="auth-tabs"><button class="active" data-auth-tab="login">Log in</button><button data-auth-tab="register">Create team</button></div>
+      <div class="auth-tabs"><button class="active" data-auth-tab="login">Log in</button><button data-auth-tab="register">Create team</button><button data-auth-tab="join">Join team</button></div>
       <form id="login-form" class="stack">
-        <label>Team name<input name="teamName" autocomplete="username" required></label>
+        <label>Team name or verified email<input name="teamName" autocomplete="username" required></label>
         <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
         <button class="primary" type="submit">Log in</button>
       </form>
@@ -44,6 +44,12 @@
         <label>Lakeside email<input name="email" type="email" placeholder="you@lakesideschool.org" required></label>
         <label>Password<input name="password" type="password" minlength="10" required></label>
         <button class="primary" type="submit">Create team</button>
+      </form>
+      <form id="join-form" class="stack hidden">
+        <label>Team code<input name="teamCode" maxlength="12" required></label>
+        <label>Your Lakeside email<input name="email" type="email" placeholder="you@lakesideschool.org" required></label>
+        <label>Shared team password<input name="password" type="password" required></label>
+        <button class="primary" type="submit">Join team</button>
       </form>
       <p class="form-note">Every account must use an email ending in @lakesideschool.org.</p>
       <div id="auth-message" class="message" role="status"></div>
@@ -80,4 +86,3 @@
   <script src="pazzle.js" defer></script>
 </body>
 </html>
-

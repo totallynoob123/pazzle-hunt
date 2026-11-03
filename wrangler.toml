@@ -9,4 +9,4 @@ database_id = "879f7c1b-e929-4c13-8d88-156105aab382"
 
 [vars]
 ADMIN_EMAIL = "your-admin@lakesideschool.org"
-
+BREVO_SENDER_EMAIL = "ej.lay4ever@gmail.com"
