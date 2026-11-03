@@ -1,0 +1,12 @@
+name = "pazzle-hunt"
+compatibility_date = "2026-01-01"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "pazzle-hunt-db"
+database_id = "879f7c1b-e929-4c13-8d88-156105aab382"
+
+[vars]
+ADMIN_EMAIL = "your-admin@lakesideschool.org"
+

@@ -1,0 +1,2 @@
+{"name":"pazzle-hunt","private":true,"scripts":{"dev":"wrangler pages dev . --d1 DB","db:local":"wrangler d1 migrations apply pazzle-hunt-db --local","db:remote":"wrangler d1 migrations apply pazzle-hunt-db --remote","deploy":"wrangler pages deploy . --project-name pazzle-hunt"},"devDependencies":{"wrangler":"^4.0.0"}}
+

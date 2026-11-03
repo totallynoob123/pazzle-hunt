@@ -1,0 +1,4 @@
+SESSION_SECRET=replace-with-a-long-random-value
+ADMIN_EMAIL=your-admin@lakesideschool.org
+ADMIN_BOOTSTRAP_PASSWORD=replace-with-a-strong-one-time-admin-password
+

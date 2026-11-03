@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pazzle Hunt</title>
+  <meta name="description" content="A six-level Lakeside puzzle hunt.">
+  <link rel="stylesheet" href="pazzle.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="Pazzle home"><span>PAZ</span>ZLE</a>
+    <nav>
+      <button data-view="hunt">Puzzles</button>
+      <button data-view="leaderboard">Leaderboard</button>
+      <button data-view="about">How it works</button>
+    </nav>
+    <div id="account-slot"><button class="outline" data-view="auth">Team login</button></div>
+  </header>
+
+  <main>
+    <section id="home-view" class="view hero active">
+      <div class="eyebrow">Lakeside Puzzle Hunt</div>
+      <h1>2026 Pazzle<br>Puzzle Hunt</h1>
+      <p id="intro-copy">Pazzle is a collaborative puzzle hunt for Lakeside teams. Solve each set, share ideas with your teammates, and climb the leaderboard. This introduction can be changed later from the admin page.</p>
+      <div class="hero-actions">
+        <button class="primary" data-view="auth">Create your team</button>
+        <button class="text-button" data-view="leaderboard">View standings</button>
+      </div>
+      <p class="rules-summary">Six levels · One hint per team each day · Five guesses total</p>
+    </section>
+
+    <section id="auth-view" class="view narrow">
+      <div class="section-kicker">Team access</div>
+      <h2>Enter the hunt</h2>
+      <div class="auth-tabs"><button class="active" data-auth-tab="login">Log in</button><button data-auth-tab="register">Create team</button></div>
+      <form id="login-form" class="stack">
+        <label>Team name<input name="teamName" autocomplete="username" required></label>
+        <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+        <button class="primary" type="submit">Log in</button>
+      </form>
+      <form id="register-form" class="stack hidden">
+        <label>Team name<input name="teamName" maxlength="40" required></label>
+        <label>Lakeside email<input name="email" type="email" placeholder="you@lakesideschool.org" required></label>
+        <label>Password<input name="password" type="password" minlength="10" required></label>
+        <button class="primary" type="submit">Create team</button>
+      </form>
+      <p class="form-note">Every account must use an email ending in @lakesideschool.org.</p>
+      <div id="auth-message" class="message" role="status"></div>
+    </section>
+
+    <section id="hunt-view" class="view">
+      <div class="section-heading"><div><div class="section-kicker">The hunt</div><h2>Puzzle levels</h2></div><p id="team-progress">Log in to save progress.</p></div>
+      <div id="level-tabs" class="level-tabs"></div>
+      <div id="puzzle-grid" class="puzzle-grid"></div>
+    </section>
+
+    <section id="leaderboard-view" class="view">
+      <div class="section-kicker">Live standings</div><h2>Leaderboard</h2>
+      <div class="table-wrap"><table><thead><tr><th>Rank</th><th>Team</th><th>Level</th><th>Solved</th><th>Last solve</th></tr></thead><tbody id="leaderboard-body"></tbody></table></div>
+    </section>
+
+    <section id="about-view" class="view narrow prose">
+      <div class="section-kicker">How it works</div><h2>Play together</h2>
+      <p>Create one account for your team using a Lakeside email address. Everyone on the team may use the same team login.</p>
+      <p>Puzzles are grouped into six levels. Solve enough puzzles to unlock the next level. Answers ignore spaces, punctuation, and capitalization.</p>
+      <p>Each team may reveal one hint per calendar day and has five answer guesses for the entire hunt.</p>
+    </section>
+  </main>
+
+  <dialog id="puzzle-dialog">
+    <button class="dialog-close" aria-label="Close">×</button>
+    <div class="section-kicker" id="dialog-level"></div><h2 id="dialog-title"></h2>
+    <div id="dialog-body" class="puzzle-body"></div>
+    <div id="hint-list" class="hint-list"></div>
+    <p id="guess-counter" class="guess-counter"></p>
+    <form id="answer-form" class="answer-row"><input name="answer" placeholder="Enter answer" required><button class="primary">Submit</button></form>
+    <div id="answer-message" class="message" role="status"></div>
+  </dialog>
+  <script src="pazzle.js" defer></script>
+</body>
+</html>
+
