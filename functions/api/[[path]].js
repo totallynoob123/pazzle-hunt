@@ -3,7 +3,7 @@ const clean=s=>String(s||'').trim();
 const answerKey=s=>clean(s).toUpperCase().replace(/[^A-Z0-9]/g,'');
 const bytesToHex=b=>[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');
 const hexToBytes=h=>new Uint8Array(h.match(/.{2}/g).map(x=>parseInt(x,16)));
-async function passwordHash(password,salt=crypto.getRandomValues(new Uint8Array(16))){const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveBits']);const bits=await crypto.subtle.deriveBits({name:'PBKDF2',salt,iterations:180000,hash:'SHA-256'},key,256);return `${bytesToHex(salt)}:${bytesToHex(bits)}`}
+async function passwordHash(password,salt=crypto.getRandomValues(new Uint8Array(16))){const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveBits']);const bits=await crypto.subtle.deriveBits({name:'PBKDF2',salt,iterations:100000,hash:'SHA-256'},key,256);return `${bytesToHex(salt)}:${bytesToHex(bits)}`}
 async function passwordOk(password,stored){const [salt]=stored.split(':');return await passwordHash(password,hexToBytes(salt))===stored}
 async function hmac(value,secret){const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']);return bytesToHex(await crypto.subtle.sign('HMAC',key,new TextEncoder().encode(value)))}
 async function sessionCookie(user,env){const exp=Date.now()+1000*60*60*24*14;const value=btoa(JSON.stringify({id:user.id,exp}));return `${value}.${await hmac(value,env.SESSION_SECRET)}`}

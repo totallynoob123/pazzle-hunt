@@ -17,5 +17,5 @@ CREATE TABLE verification_tokens(
 );
 INSERT OR IGNORE INTO team_members(team_id,email,verified) SELECT id,email,1 FROM teams;
 INSERT OR IGNORE INTO teams(team_name,email,password_hash,role,level,leaderboard_visible,team_code,banned)
-VALUES('test','test','5f8c562dc3fc28c0bc3afb6fb8984df5:6c8d0feab6f975ff9251eefd157c88c7551b5901f5192edc0d38d1823ac0bd69','team',1,0,'TESTTEAM',0);
+VALUES('test','test','5f8c562dc3fc28c0bc3afb6fb8984df5:b186ceda10f54a4b9e1a6d7d2e2161df2cfdc855470889a11291f9a3e5c4619e','team',1,0,'TESTTEAM',0);
 INSERT OR IGNORE INTO team_members(team_id,email,verified) SELECT id,'test',1 FROM teams WHERE team_name='test';
