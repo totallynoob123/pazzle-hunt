@@ -36,23 +36,24 @@
       <h2>Enter the hunt</h2>
       <div class="auth-tabs"><button class="active" data-auth-tab="login">Log in</button><button data-auth-tab="register">Create team</button><button data-auth-tab="join">Join team</button></div>
       <form id="login-form" class="stack">
-        <label>Team name or verified email<input name="teamName" autocomplete="username" required></label>
+        <label>Team name<input name="teamName" autocomplete="username" required></label>
         <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
         <button class="primary" type="submit">Log in</button>
       </form>
       <form id="register-form" class="stack hidden">
         <label>Team name<input name="teamName" maxlength="40" required></label>
-        <label>Lakeside email<input name="email" type="email" placeholder="you@lakesideschool.org" required></label>
-        <label>Password<input name="password" type="password" minlength="10" required></label>
+        <label>Email<input name="email" type="email" placeholder="you@lakesideschool.org" required></label>
+        <label>Team password or admin passcode<input name="password" type="password" minlength="10" required></label>
+        <p class="form-note">Normal teams need a Lakeside email. To create the administrator account, use team name ADMIN, any valid email, and the admin passcode.</p>
         <button class="primary" type="submit">Create team</button>
       </form>
       <form id="join-form" class="stack hidden">
-        <label>Team code<input name="teamCode" maxlength="12" required></label>
+        <label>Team name<input name="teamName" maxlength="40" required></label>
         <label>Your Lakeside email<input name="email" type="email" placeholder="you@lakesideschool.org" required></label>
         <label>Shared team password<input name="password" type="password" required></label>
         <button class="primary" type="submit">Join team</button>
       </form>
-      <p class="form-note">Every account must use an email ending in @lakesideschool.org.</p>
+      <p class="form-note">Team members must use an unused email ending in @lakesideschool.org.</p>
       <div id="auth-message" class="message" role="status"></div>
     </section>
 
@@ -69,7 +70,7 @@
 
     <section id="about-view" class="view narrow prose">
       <div class="section-kicker">How it works</div><h2>Play together</h2>
-      <p>Create one account for your team using a Lakeside email address. Everyone on the team may use the same team login.</p>
+      <p>Create a team using a Lakeside email address. Additional members join with the team name and shared password, then verify their own unused Lakeside email.</p>
       <p>Puzzles are grouped into six levels. Solve enough puzzles to unlock the next level. Answers ignore spaces, punctuation, and capitalization.</p>
       <p>Each team may reveal one hint per calendar day and has five answer guesses for the entire hunt.</p>
     </section>
